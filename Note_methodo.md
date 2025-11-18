@@ -88,9 +88,29 @@ Trois vues complémentaires :
 - Barplot incidents/saisons  
 Pas de saison particulièrement problématique, mais certains mois concentrent plus d’incidents.
 
+### Rail Traffic Score (RTS)  
+Score construit à partir de :  
+- minutes perdues (poids 0.33)  
+- suppressions (poids 0.33)  
+- incidents (poids 0.33)
+
+Normalisation (min-max) + pondération = score entre **0 et 100**.  
+
+Interprétation :  
+- **80–100** : critique  
+- **60–80** : mauvais  
+- **40–60** : fragile  
+- **20–40** : bon  
+- **0–20** : excellent
+
+Permet de suivre l’état du réseau quotidiennement.
+
 ---
 
 ## Recommandations au client
+
+### Utiliser le RTS comme indicateur de pilotage  
+Un score unique, simple, compréhensible par tous les services.
 
 ### Cibler les causes à fort impact  
 Certaines causes rares génèrent la majorité des minutes de retard → interventions prioritaires.
